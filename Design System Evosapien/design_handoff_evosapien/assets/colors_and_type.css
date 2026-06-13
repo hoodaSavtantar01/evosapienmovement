@@ -1,0 +1,326 @@
+/* ============================================================
+   evosmove design tokens
+   Single source of truth for color, type, spacing, motion.
+   Strictly monochrome. No chromatic accents.
+   ============================================================ */
+
+/* Webfonts — Onest (display + body) and Inter Tight (metadata) */
+@import url('https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;700&family=Inter+Tight:wght@300;400;500&display=swap');
+
+:root {
+  /* ---------- Color (monochrome) ---------- */
+  --bg:           #000000;   /* page + card background */
+  --bg-elevated: #0a0a0a;    /* hover state on tiles (neutral-900) */
+  --fg:           #ffffff;   /* primary text, primary CTA fill */
+  --fg-70:        rgba(255, 255, 255, 0.70);  /* body */
+  --fg-60:        rgba(255, 255, 255, 0.60);  /* secondary body */
+  --fg-50:        rgba(255, 255, 255, 0.50);  /* description */
+  --fg-40:        rgba(255, 255, 255, 0.40);  /* eyebrows, muted copy */
+  --fg-30:        rgba(255, 255, 255, 0.30);  /* protocol numbers */
+  --fg-20:        rgba(255, 255, 255, 0.20);  /* hairline borders, outline-text stroke */
+  --fg-10:        rgba(255, 255, 255, 0.10);  /* card borders, dividers */
+  --fg-05:        rgba(255, 255, 255, 0.05);  /* section seams, tile gap */
+
+  /* Semantic aliases */
+  --color-surface:        var(--bg);
+  --color-text:           var(--fg);
+  --color-text-secondary: var(--fg-70);
+  --color-text-muted:     var(--fg-40);
+  --color-border-thin:    var(--fg-20);
+  --color-border-hairline: var(--fg-10);
+  --color-divider:        var(--fg-05);
+
+  /* ---------- Type ---------- */
+  --font-primary:   'Onest', system-ui, -apple-system, sans-serif;
+  --font-secondary: 'Inter Tight', system-ui, sans-serif;
+
+  /* Weights actually used */
+  --weight-light:   300;
+  --weight-regular: 400;
+  --weight-bold:    700;
+
+  /* Display scale (px @ 1.0 line-height) */
+  --type-hero:      110px;   /* hero headline (lg) */
+  --type-hero-md:    72px;   /* hero headline (md) */
+  --type-display:    96px;   /* "BEYOND THE PHYSICAL" — full-bleed */
+  --type-h1:         48px;   /* section heads */
+  --type-h2:         36px;   /* sub-section, tile headline */
+  --type-h3:         28px;   /* card title, tier name */
+  --type-h4:         24px;   /* small tile titles */
+  --type-stat:       60px;   /* "94%", "24k" */
+
+  /* Body & UI scale */
+  --type-body-lg:   20px;
+  --type-body:      18px;
+  --type-body-sm:   16px;
+  --type-meta:      13px;    /* nav links, small labels */
+  --type-eyebrow:   12px;
+  --type-micro:     10px;    /* protocol numbers, tag dots */
+
+  /* Line-heights */
+  --lh-tight:    1.0;     /* @kind font */
+  --lh-snug:     1.1;     /* @kind font */
+  --lh-normal:   1.4;     /* @kind font */
+  --lh-loose:    1.6;     /* @kind font */
+
+  /* Tracking */
+  --track-tight:    -0.025em;   /* display heads */
+  --track-normal:    0;         /* @kind font */
+  --track-wide:      0.15em;
+  --track-widest:    0.25em;    /* nav links, button labels */
+  --track-eyebrow:   0.3em;     /* small uppercase labels */
+  --track-extreme:   0.4em;     /* logo */
+  --track-ultra:     0.5em;     /* hero eyebrow */
+
+  /* ---------- Spacing ---------- */
+  --space-1:   4px;
+  --space-2:   8px;
+  --space-3:   12px;
+  --space-4:   16px;
+  --space-5:   24px;
+  --space-6:   32px;
+  --space-7:   48px;
+  --space-8:   64px;
+  --space-9:   96px;
+  --space-section: 120px;  /* canonical section padding */
+
+  --content-max:   1920px;
+  --content-pad:   40px;     /* desktop horizontal */
+  --content-pad-mobile: 24px;
+
+  /* ---------- Radii ---------- */
+  --radius-none:   0;        /* default — cards, tiles, modals */
+  --radius-subtle: 4px;      /* tiny chips (rarely used) */
+  --radius-full:   9999px;   /* every button + pill */
+
+  /* ---------- Borders ---------- */
+  --border-hairline: 0.5px;
+  --border-thin:     0.8px;
+  --border-default:  1px;
+
+  /* ---------- Motion ---------- */
+  --ease-out:       cubic-bezier(0.16, 1, 0.3, 1);   /* @kind other */
+  --ease-standard:  cubic-bezier(0.4, 0, 0.2, 1);    /* @kind other */
+  --duration-fast:    300ms;   /* @kind other */
+  --duration-medium:  500ms;   /* @kind other */
+  --duration-slow:    700ms;   /* @kind other */
+  --duration-reveal:  800ms;   /* @kind other */
+  --duration-zoom:    25s;     /* @kind other */
+}
+
+/* ============================================================
+   Semantic element styles
+   Drop these classes on raw markup to get the brand voice.
+   ============================================================ */
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-primary);
+  font-size: var(--type-body);
+  line-height: var(--lh-loose);
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+}
+
+/* Display headlines — the signature evosmove voice */
+.evo-hero {
+  font-family: var(--font-primary);
+  font-weight: var(--weight-bold);
+  font-size: var(--type-hero);
+  line-height: 0.9;
+  letter-spacing: var(--track-tight);
+  text-transform: uppercase;
+  color: var(--fg);
+}
+
+.evo-display {
+  font-family: var(--font-primary);
+  font-weight: var(--weight-bold);
+  font-size: var(--type-display);
+  line-height: var(--lh-tight);
+  letter-spacing: var(--track-tight);
+  text-transform: uppercase;
+}
+
+.evo-h1 {
+  font-family: var(--font-primary);
+  font-weight: var(--weight-bold);
+  font-size: var(--type-h1);
+  line-height: 1.05;
+  letter-spacing: var(--track-tight);
+  text-transform: uppercase;
+}
+
+.evo-h2 {
+  font-family: var(--font-primary);
+  font-weight: var(--weight-bold);
+  font-size: var(--type-h2);
+  line-height: 1.1;
+  letter-spacing: var(--track-tight);
+  text-transform: uppercase;
+}
+
+.evo-h3 {
+  font-family: var(--font-primary);
+  font-weight: var(--weight-bold);
+  font-size: var(--type-h3);
+  line-height: 1.15;
+  letter-spacing: var(--track-tight);
+  text-transform: uppercase;
+}
+
+/* Body */
+.evo-body {
+  font-family: var(--font-primary);
+  font-weight: var(--weight-light);
+  font-size: var(--type-body);
+  line-height: var(--lh-loose);
+  color: var(--fg-60);
+}
+
+.evo-body-lg {
+  font-family: var(--font-primary);
+  font-weight: var(--weight-light);
+  font-size: var(--type-body-lg);
+  line-height: var(--lh-loose);
+  color: var(--fg-60);
+}
+
+/* Eyebrow — small uppercase metadata above headlines */
+.evo-eyebrow {
+  font-family: var(--font-primary);
+  font-weight: var(--weight-bold);
+  font-size: var(--type-eyebrow);
+  letter-spacing: var(--track-eyebrow);
+  text-transform: uppercase;
+  color: var(--fg-40);
+}
+
+/* "PROTOCOL I" / "01" — the technical metadata flavor */
+.evo-meta {
+  font-family: var(--font-secondary);
+  font-weight: var(--weight-light);
+  font-size: var(--type-micro);
+  letter-spacing: var(--track-widest);
+  text-transform: uppercase;
+  color: var(--fg-30);
+}
+
+/* Navigation */
+.evo-nav-link {
+  font-family: var(--font-primary);
+  font-weight: var(--weight-light);
+  font-size: var(--type-meta);
+  letter-spacing: var(--track-widest);
+  text-transform: uppercase;
+  color: var(--fg);
+  text-decoration: none;
+  transition: opacity var(--duration-fast) var(--ease-standard);
+}
+.evo-nav-link:hover { opacity: 0.7; }
+
+/* Logo wordmark */
+.evo-logo {
+  font-family: var(--font-primary);
+  font-weight: var(--weight-bold);
+  font-size: 24px;
+  letter-spacing: var(--track-extreme);
+  text-transform: uppercase;
+  color: var(--fg);
+  text-decoration: none;
+}
+
+/* Outline-text effect — the two-tone display flourish */
+.evo-outline {
+  -webkit-text-stroke: 1px var(--fg-40);
+  color: transparent;
+}
+
+/* Stats */
+.evo-stat {
+  font-family: var(--font-primary);
+  font-weight: var(--weight-bold);
+  font-size: var(--type-stat);
+  line-height: 1.0;
+  color: var(--fg);
+}
+.evo-stat-label {
+  font-family: var(--font-primary);
+  font-size: var(--type-micro);
+  letter-spacing: var(--track-eyebrow);
+  text-transform: uppercase;
+  color: var(--fg-40);
+}
+
+/* ============================================================
+   Component primitives
+   ============================================================ */
+
+/* Pill button — primary (filled white on black) */
+.evo-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-primary);
+  font-weight: var(--weight-bold);
+  font-size: var(--type-eyebrow);
+  letter-spacing: var(--track-widest);
+  text-transform: uppercase;
+  padding: 16px 48px;
+  border-radius: var(--radius-full);
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  background: var(--fg);
+  color: var(--bg);
+  transition: opacity var(--duration-fast) var(--ease-standard);
+}
+.evo-btn:hover { opacity: 0.9; }
+
+/* Pill button — outline (inverts on hover) */
+.evo-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-primary);
+  font-weight: var(--weight-light);
+  font-size: var(--type-eyebrow);
+  letter-spacing: var(--track-widest);
+  text-transform: uppercase;
+  padding: 16px 48px;
+  border-radius: var(--radius-full);
+  border: var(--border-thin) solid var(--fg-40);
+  background: transparent;
+  color: var(--fg);
+  cursor: pointer;
+  text-decoration: none;
+  transition: background var(--duration-fast) var(--ease-standard),
+              color var(--duration-fast) var(--ease-standard);
+}
+.evo-btn-outline:hover { background: var(--fg); color: var(--bg); }
+
+/* Card — black bg, hairline border, square corners */
+.evo-card {
+  background: var(--bg);
+  border: var(--border-thin) solid var(--fg-10);
+  padding: 40px;
+}
+.evo-card--featured { border-color: var(--fg); }
+
+/* Hairline accent — the brand's primary "ornament" */
+.evo-hairline {
+  display: inline-block;
+  width: 32px;
+  height: 1px;
+  background: var(--fg-20);
+  transition: width var(--duration-fast) var(--ease-standard);
+}
+.evo-hairline--lg { width: 48px; }
+
+/* Section divider seam */
+.evo-section {
+  padding: var(--space-section) 0;
+  border-top: 1px solid var(--fg-05);
+  border-bottom: 1px solid var(--fg-05);
+}

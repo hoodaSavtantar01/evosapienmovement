@@ -1,0 +1,10 @@
+/* ============================================================
+   ONYX / evosmove — design system entry point
+   Consumers link THIS file; it pulls in the full system.
+   ============================================================ */
+
+/* Tokens + semantic element styles (colors, type, spacing, motion) */
+@import url("assets/colors_and_type.css");
+
+/* Shared site styles (layout, components, utilities) */
+@import url("assets/site.css");
