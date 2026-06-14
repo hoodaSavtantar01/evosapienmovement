@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import PlanSelector from "@/components/PlanSelector";
 
 const WEB3FORMS_KEY = "4b6ab8d8-c1f8-47b4-ab6e-7d014f71a72a";
 
@@ -89,7 +90,14 @@ export default function TourForm() {
               <input className="field" type="text" name="instagram" placeholder="yourhandle" style={{ paddingLeft: 16 }} />
             </div>
           </div>
-          <div style={{ gridColumn: "span 2", marginTop: 16 }}>
+          <div style={{ gridColumn: "span 2", marginTop: 24 }}>
+            <label className="meta" style={{ display: "block", marginBottom: 16, color: "#0a0a0a" }}>
+              Plan of interest <span style={{ opacity: 0.4, fontWeight: 300 }}>(optional — helps us prepare)</span>
+            </label>
+            <PlanSelector theme="light" />
+          </div>
+
+          <div style={{ gridColumn: "span 2", marginTop: 24 }}>
             <label className="meta" style={{ display: "block", marginBottom: 8 }}>Notes</label>
             <textarea className="field" name="note" placeholder="Anything we should know in advance." />
           </div>

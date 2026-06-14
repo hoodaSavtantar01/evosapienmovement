@@ -1,18 +1,11 @@
 "use client";
 
 import { useState } from "react";
+import PlanSelector from "@/components/PlanSelector";
 
 const WEB3FORMS_KEY = "4b6ab8d8-c1f8-47b4-ab6e-7d014f71a72a";
 
-const SPANS = [
-  { value: "month", label: "The Month", price: "₹9,500", sub: "1 month · ₹9,500 / mo" },
-  { value: "quarter", label: "The Quarter", price: "₹27,000", sub: "3 months · ₹9,000 / mo · save 5%" },
-  { value: "half", label: "The Half", price: "₹51,000", sub: "6 months · ₹8,500 / mo · save 11%" },
-  { value: "year", label: "The Year", price: "₹96,000", sub: "12 months · ₹8,000 / mo · save 16%" },
-];
-
 export default function ApplyForm() {
-  const [span, setSpan] = useState("");
   const [fileName, setFileName] = useState("");
   const [sent, setSent] = useState(false);
   const [submitting, setSubmitting] = useState(false);
@@ -20,6 +13,11 @@ export default function ApplyForm() {
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
+    const data = new FormData(form);
+    if (!data.get("membership_type") || !data.get("membership_span")) {
+      alert("Please choose who the membership is for and a plan.");
+      return;
+    }
     const fileInput = form.querySelector<HTMLInputElement>('input[type="file"]');
     if (fileInput?.files?.[0] && fileInput.files[0].size > 5 * 1024 * 1024) {
       alert("ID proof file is too large. Please upload a file under 5 MB.");
@@ -67,22 +65,7 @@ export default function ApplyForm() {
           </div>
 
           <div style={{ gridColumn: "span 2", marginTop: 8 }}>
-            <label className="meta" style={{ display: "block", marginBottom: 16 }}>Membership Span</label>
-            <input type="hidden" name="membership_span" value={span} required />
-            <div id="spanPicker" style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)", gap: 8 }}>
-              {SPANS.map((s) => (
-                <button
-                  key={s.value}
-                  type="button"
-                  className={`span-opt${span === s.value ? " selected" : ""}`}
-                  onClick={() => setSpan(s.value)}
-                >
-                  <span className="span-label">{s.label}</span>
-                  <span className="span-price">{s.price}</span>
-                  <span className="span-sub">{s.sub}</span>
-                </button>
-              ))}
-            </div>
+            <PlanSelector theme="dark" />
           </div>
 
           <div>

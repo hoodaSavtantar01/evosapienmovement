@@ -1,12 +1,6 @@
 import Link from "next/link";
 import HyperspeedHero from "@/components/HyperspeedHero";
-
-const TIERS = [
-  { name: "The Month.", price: "₹9,500", note: "1 month" },
-  { name: "The Quarter.", price: "₹27,000", note: "3 months · save 5%" },
-  { name: "The Half.", price: "₹51,000", note: "6 months · save 11%" },
-  { name: "The Year.", price: "₹96,000", note: "12 months · save 16%", featured: true },
-];
+import { PLANS, formatINR } from "@/lib/pricing";
 
 export default function HomePage() {
   return (
@@ -124,18 +118,18 @@ export default function HomePage() {
             <span className="eyebrow">03 — The Club</span>
           </div>
           <div className="reveal">
-            {TIERS.map((t, i) => (
+            {PLANS.map((p, i) => (
               <Link
-                key={t.name}
+                key={p.value}
                 href="/membership"
                 className="tier-row"
-                style={{ display: "grid", textDecoration: "none", ...(i === TIERS.length - 1 ? { borderBottom: "none" } : {}) }}
+                style={{ display: "grid", textDecoration: "none", ...(i === PLANS.length - 1 ? { borderBottom: "none" } : {}) }}
               >
                 <span className="name">
-                  {t.name}
-                  <span style={{ fontSize: "clamp(14px,1.4vw,18px)", fontWeight: 300, letterSpacing: "0.1em", opacity: 0.4, marginLeft: 24 }}>{t.price}</span>
+                  {p.name}
+                  <span style={{ fontSize: "clamp(14px,1.4vw,18px)", fontWeight: 300, letterSpacing: "0.1em", opacity: 0.4, marginLeft: 24 }}>from {formatINR(p.prices.female)}</span>
                 </span>
-                <span className="meta" style={{ whiteSpace: "nowrap", ...(t.featured ? { color: "#fff" } : {}) }}>{t.note}</span>
+                <span className="meta" style={{ whiteSpace: "nowrap", ...(p.badge ? { color: "#fff" } : {}) }}>{p.badge ?? p.duration}</span>
                 <span className="plus-mark" style={{ color: "rgba(255,255,255,0.5)" }} />
               </Link>
             ))}

@@ -1,17 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { PLANS, formatINR } from "@/lib/pricing";
 
 export const metadata: Metadata = {
   title: "EVOSAPIEN MOVEMENT — Membership",
-  description: "One membership, full access to all disciplines. The longer you commit, the less you pay per month.",
+  description: "One membership, full access to all disciplines. Male, female, and couple rates across monthly, quarterly, half-yearly, and annual plans.",
 };
-
-const TIERS = [
-  { kicker: "Pay Monthly", name: "The Month.", blurb: "Rolling access, no lock-in. Cancel any time.", eff: "Effective ₹9,500 / mo", price: "₹9,500", per: "/ 1 month", cta: "btn-ghost", featured: false },
-  { kicker: "Pay Quarterly", name: "The Quarter.", blurb: "A season to build a habit. Billed once for three months.", eff: "Effective ₹9,000 / mo · save 5%", price: "₹27,000", per: "/ 3 months", cta: "btn-ghost", featured: false },
-  { kicker: "Pay Half-Yearly", name: "The Half.", blurb: "Six months of momentum. The sweet spot for transformation.", eff: "Effective ₹8,500 / mo · save 11%", price: "₹51,000", per: "/ 6 months", cta: "btn-ghost", featured: false },
-  { kicker: "Pay Annually", name: "The Year.", blurb: "A full year of evolution at the lowest rate we offer.", eff: "Effective ₹8,000 / mo · save 16%", price: "₹96,000", per: "/ year", cta: "btn-solid", featured: true },
-];
 
 const FAQ = [
   { q: "Do I need experience to join?", a: "No. We work with complete beginners and competitive athletes alike. Every new member starts with a personal assessment so the program meets you where you are." },
@@ -44,36 +38,37 @@ export default function MembershipPage() {
           <div className="reveal" style={{ marginBottom: 56, maxWidth: 680 }}>
             <span className="eyebrow">Commitment</span>
             <h2 className="display-h2" style={{ margin: "24px 0 0" }}>Choose Your Span.</h2>
-            <p className="body" style={{ margin: "24px 0 0", maxWidth: 520 }}>One membership. Full access to all six disciplines. The longer you commit, the less you pay per month.</p>
+            <p className="body" style={{ margin: "24px 0 0", maxWidth: 520 }}>One membership. Full access to all six disciplines. Male, female, and couple rates — the longer you commit, the less you pay.</p>
           </div>
 
           <div className="tier-grid" style={{ display: "grid", gridTemplateColumns: "1fr", gap: 1, background: "rgba(255,255,255,0.06)" }}>
-            {TIERS.map((t) => (
-              <article key={t.name} className="reveal" style={{ background: "#000", padding: "44px 36px", display: "flex", flexDirection: "column", gap: 36, position: "relative", ...(t.featured ? { border: "1px solid #fff" } : {}) }}>
-                {t.featured && (
-                  <div style={{ position: "absolute", top: 0, right: 36, transform: "translateY(-50%)", background: "#fff", color: "#000", padding: "6px 14px", fontSize: 9, fontWeight: 700, letterSpacing: "0.4em", textTransform: "uppercase" }}>Best Value</div>
-                )}
-                <header>
-                  <span className="eyebrow">{t.kicker}</span>
-                  <h2 className="display-h3" style={{ margin: "20px 0 16px", fontSize: "clamp(34px,3.4vw,46px)" }}>{t.name}</h2>
-                  <p className="body" style={{ margin: 0, maxWidth: 300 }}>{t.blurb}</p>
-                </header>
-                <div style={{ flexGrow: 1 }} />
-                <footer>
-                  <div className="meta" style={{ marginBottom: 8, ...(t.featured ? { color: "#fff" } : {}) }}>{t.eff}</div>
-                  <div style={{ display: "flex", alignItems: "baseline", gap: 8, marginBottom: 24 }}>
-                    <span style={{ fontSize: 44, fontWeight: 700, letterSpacing: "-0.03em" }}>{t.price}</span>
-                    <span className="meta">{t.per}</span>
+            {PLANS.map((p) => {
+              const featured = p.badge === "Best Value";
+              return (
+                <article key={p.value} className="reveal plan-card" style={{ background: "#000", display: "flex", flexDirection: "column", gap: 32, position: "relative", ...(featured ? { border: "1px solid #fff" } : {}) }}>
+                  {p.badge && <div className="plan-badge">{p.badge}</div>}
+                  <header>
+                    <span className="eyebrow">{p.duration}</span>
+                    <h2 className="display-h3 plan-name" style={{ margin: "16px 0 0" }}>{p.name}</h2>
+                  </header>
+                  <div className="plan-prices">
+                    <div className="plan-price-row"><span className="g">Male</span><span className="amt">{formatINR(p.prices.male)}</span></div>
+                    <div className="plan-price-row"><span className="g">Female</span><span className="amt">{formatINR(p.prices.female)}</span></div>
+                    <div className={`plan-price-row${p.prices.couple == null ? " muted" : ""}`}>
+                      <span className="g">Couple</span>
+                      <span className="amt">{p.prices.couple != null ? formatINR(p.prices.couple) : "—"}</span>
+                    </div>
                   </div>
-                  <Link href="/contact" className={`btn ${t.cta}`} style={{ width: "100%" }}>Apply</Link>
-                </footer>
-              </article>
-            ))}
+                  <div style={{ flexGrow: 1 }} />
+                  <Link href="/contact" className={`btn ${featured ? "btn-solid" : "btn-ghost"}`} style={{ width: "100%" }}>Apply</Link>
+                </article>
+              );
+            })}
           </div>
 
           <p className="meta reveal" style={{ textAlign: "center", marginTop: 48 }}>
             All memberships begin with a personal assessment. No joining fee. GST included. Longer
-            spans are billed once, up front.
+            spans are billed once, up front. Couple rates cover two members on one plan.
           </p>
         </div>
       </section>

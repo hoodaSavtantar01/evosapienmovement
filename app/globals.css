@@ -662,6 +662,49 @@ img.brand-logo:hover {
 .span-sub { font-size: 10px; font-weight: 400; opacity: .45; letter-spacing: 0.05em; }
 .span-opt.selected .span-label,
 .span-opt.selected .span-sub { opacity: .7; }
+.span-opt:disabled { opacity: .4; cursor: not-allowed; }
+
+/* ---- Membership plan cards (Male / Female / Couple price table) ---- */
+.plan-card { padding: 44px 36px; }
+.plan-name { font-size: clamp(32px, 3.4vw, 46px); }
+.plan-badge {
+  position: absolute; top: 0; right: 36px; transform: translateY(-50%);
+  background: #fff; color: #000; padding: 6px 14px;
+  font-size: 9px; font-weight: 700; letter-spacing: 0.4em; text-transform: uppercase;
+}
+.plan-prices { display: flex; flex-direction: column; gap: 16px; }
+.plan-price-row {
+  display: flex; align-items: baseline; justify-content: space-between; gap: 16px;
+  padding-bottom: 16px; border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.plan-prices .plan-price-row:last-child { padding-bottom: 0; border-bottom: 0; }
+.plan-price-row .g {
+  font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase;
+  color: rgba(255,255,255,0.55); font-weight: 400;
+}
+.plan-price-row .amt { font-size: clamp(26px, 2.4vw, 34px); font-weight: 700; letter-spacing: -0.02em; line-height: 1; }
+.plan-price-row.muted .g, .plan-price-row.muted .amt { opacity: 0.32; }
+
+/* ---- Audience (Male / Female / Couple) toggle in the forms ---- */
+.ps-label { display: block; margin-bottom: 12px; }
+.ps-audience { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.ps-aud-opt {
+  padding: 14px 8px; background: transparent; color: #fff; font-family: inherit;
+  border: 1px solid rgba(255,255,255,0.18);
+  font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; font-weight: 400;
+  cursor: pointer; transition: border-color .2s, background .2s;
+}
+.ps-aud-opt:hover { border-color: rgba(255,255,255,0.5); }
+.ps-aud-opt.selected { border-color: #fff; background: rgba(255,255,255,0.08); }
+.ps-plans { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+
+/* Light variant (tour form sits on a white panel) */
+.ps-light .ps-aud-opt { color: #0a0a0a; border-color: rgba(0,0,0,0.18); }
+.ps-light .ps-aud-opt:hover { border-color: rgba(0,0,0,0.5); }
+.ps-light .ps-aud-opt.selected { border-color: #0a0a0a; background: rgba(0,0,0,0.05); }
+.ps-light .span-opt { color: #0a0a0a; border-color: rgba(0,0,0,0.15); }
+.ps-light .span-opt:hover { border-color: rgba(0,0,0,0.45); }
+.ps-light .span-opt.selected { border-color: #0a0a0a; background: rgba(0,0,0,0.04); }
 
 /* =========================================================
    Hyperspeed hero (ported from index.html <style>)
@@ -786,6 +829,17 @@ img.brand-logo:hover {
 
   .tier-grid { grid-template-columns: 1fr !important; }
   .tier-grid article { padding: 28px 20px !important; gap: 20px !important; }
+
+  /* Spacious, easy-to-read pricing on phones */
+  .plan-card { padding: 40px 26px !important; gap: 30px !important; }
+  .plan-name { font-size: clamp(32px, 9vw, 42px) !important; }
+  .plan-prices { gap: 22px; }
+  .plan-price-row { padding-bottom: 22px; }
+  .plan-price-row .g { font-size: 13px; }
+  .plan-price-row .amt { font-size: 32px; }
+
+  .ps-aud-opt { padding: 16px 8px; font-size: 13px; }
+  .ps-plans .span-price { font-size: 24px !important; }
 
   .rec-pill { padding: 10px 14px !important; font-size: 9px !important; }
 
