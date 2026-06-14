@@ -7,7 +7,7 @@ import SiteMotion from "@/components/SiteMotion";
 export const metadata: Metadata = {
   title: "EVOSAPIEN MOVEMENT — Engineering Human Peak",
   description:
-    "Five disciplines under one roof in Rohtak. Strength, climbing, calisthenics, dance, and the Recovery Room — 10,000 square feet, powered by Technogym.",
+    "Six disciplines under one roof in Rohtak. Strength, cardio, climbing, calisthenics, dance, and the Recovery Room — 10,000 square feet, powered by Technogym.",
   icons: { icon: "/assets/logo.png" },
 };
 

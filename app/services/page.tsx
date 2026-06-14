@@ -3,7 +3,7 @@ import RecoveryRoom from "@/components/RecoveryRoom";
 
 export const metadata: Metadata = {
   title: "EVOSAPIEN MOVEMENT — Services",
-  description: "Five disciplines under one roof: strength, climbing, calisthenics, dance, and the Recovery Room.",
+  description: "Six disciplines under one roof: strength, cardio, climbing, calisthenics, dance, and the Recovery Room.",
 };
 
 const bullet = { width: 6, height: 1, background: "rgba(255,255,255,0.6)" } as const;
@@ -20,9 +20,9 @@ export default function ServicesPage() {
           </div>
           <h1 className="display-hero reveal" style={{ maxWidth: 1300 }}>The<br /><span className="outline-text">Disciplines.</span></h1>
           <p className="body-lg reveal" style={{ maxWidth: 640, marginTop: 48 }}>
-            Five disciplines under one roof. Strength, climbing, calisthenics, dance, and the
-            Recovery Room — the full evolutionary cycle, in 10,000 square feet of dedicated
-            movement space.
+            Six disciplines under one roof. Strength, cardio, climbing, calisthenics, dance,
+            and the Recovery Room — the full evolutionary cycle, in 10,000 square feet of
+            dedicated movement space.
           </p>
         </div>
       </section>
@@ -140,6 +140,34 @@ export default function ServicesPage() {
               <div style={{ position: "relative", aspectRatio: "4 / 3", overflow: "hidden" }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src="/assets/photos/dance.jpg" alt="Dancers in a salsa class" style={{ width: "100%", height: "100%", objectFit: "cover", filter: "grayscale(1) brightness(0.85)" }} />
+              </div>
+            </div>
+          </article>
+
+          {/* Discipline VI — Cardio */}
+          <article className="reveal" style={{ padding: "48px 0", borderTop: "1px solid rgba(255,255,255,0.08)" }}>
+            <div className="row-grid" style={{ display: "grid", gridTemplateColumns: "1fr", gap: 48 }}>
+              <div style={{ position: "relative", aspectRatio: "4 / 3", overflow: "hidden" }}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/assets/photos/cardio.jpg" alt="Runner on a curved self-powered treadmill" style={{ width: "100%", height: "100%", objectFit: "cover", filter: "grayscale(1) brightness(0.85)" }} />
+              </div>
+              <div>
+                <span className="eyebrow">Discipline VI</span>
+                <h2 className="display-h2" style={{ margin: "24px 0 24px" }}>Cardio.</h2>
+                <p className="body-lg" style={{ marginBottom: 32 }}>
+                  Build the engine that powers every other discipline. Self-powered curved
+                  treadmills, rowers, and Technogym conditioning machines for endurance, fat loss,
+                  and heart-rate training. Sprint, pace, or recover — every session is programmed
+                  to your zones.
+                </p>
+                <ul style={{ listStyle: "none", padding: 0, margin: "0 0 32px", display: "flex", flexDirection: "column", gap: 14 }}>
+                  <li className="meta" style={{ display: "flex", alignItems: "center", gap: 14 }}><span style={bullet} />Self-powered curved treadmills &amp; rowers</li>
+                  <li className="meta" style={{ display: "flex", alignItems: "center", gap: 14 }}><span style={bullet} />Heart-rate zone training, coached to your targets</li>
+                  <li className="meta" style={{ display: "flex", alignItems: "center", gap: 14 }}><span style={bullet} />Built for endurance, conditioning &amp; fat loss</li>
+                </ul>
+                <div style={{ display: "flex", gap: 24, alignItems: "center", flexWrap: "wrap" }}>
+                  <span className="meta">20 — 45 min · All Levels</span>
+                </div>
               </div>
             </div>
           </article>

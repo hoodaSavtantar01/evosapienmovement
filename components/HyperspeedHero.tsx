@@ -95,8 +95,8 @@ export default function HyperspeedHero() {
           <span className="outline-text">To Evolve.</span>
         </h1>
         <p className="warp-lede">
-          Five disciplines under one roof in Rohtak. Strength, climbing, calisthenics,
-          dance, and the Recovery Room — 10,000 square feet, powered by Technogym.
+          Six disciplines under one roof in Rohtak. Strength, cardio, climbing,
+          calisthenics, dance, and the Recovery Room — 10,000 square feet, powered by Technogym.
         </p>
         <div className="warp-cta">
           <Link href="/contact" className="btn btn-solid">Begin Application</Link>

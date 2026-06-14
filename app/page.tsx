@@ -107,6 +107,16 @@ export default function HomePage() {
               </div>
               <span className="arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path strokeLinecap="round" strokeWidth="1.2" d="M5 12h14m-6-6l6 6-6 6" /></svg></span>
             </Link>
+
+            <Link href="/services" className="training-row reveal">
+              <div className="bg" style={{ backgroundImage: "url('/assets/photos/cardio.jpg')" }} />
+              <div className="veil" />
+              <div className="content">
+                <span className="eyebrow" style={{ color: "rgba(255,255,255,0.4)" }}>Discipline VI — Build Your Engine</span>
+                <span className="title">Cardio</span>
+              </div>
+              <span className="arrow"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path strokeLinecap="round" strokeWidth="1.2" d="M5 12h14m-6-6l6 6-6 6" /></svg></span>
+            </Link>
           </div>
         </div>
       </section>
