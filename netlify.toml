@@ -1,0 +1,13 @@
+# Netlify build configuration for the Evosapien Movement Next.js site.
+# Netlify auto-installs the Next.js runtime (@netlify/plugin-nextjs); this file
+# just pins the build command, output, and Node version so deploys are stable.
+
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
