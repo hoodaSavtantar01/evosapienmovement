@@ -3,7 +3,7 @@
 import { useState } from "react";
 import PlanSelector from "@/components/PlanSelector";
 
-const WEB3FORMS_KEY = "4b6ab8d8-c1f8-47b4-ab6e-7d014f71a72a";
+const WEB3FORMS_KEY = "4c45777b-f6b9-47e5-9893-73d255ddc5bd";
 
 export default function TourForm() {
   const [fileName, setFileName] = useState("");

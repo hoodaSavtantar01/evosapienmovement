@@ -22,8 +22,8 @@ in person at the gym.
 | Styling | Tailwind CSS + a small amount of global CSS for the design-system tokens already authored |
 | Animation | **GSAP** (+ ScrollTrigger) for scroll reveals, headline masks, stat count-ups, hover motion |
 | Hero WebGL | Existing `hyperspeed.js` (three.js + postprocessing), loaded as plain scripts |
-| Forms | Web3Forms (existing key `4b6ab8d8-...`), `multipart/form-data` POST |
-| Hosting | Vercel (static-friendly; no server secrets needed) |
+| Forms | Web3Forms (key `4c45777b-...` → evosapienmovement@gmail.com), `multipart/form-data` POST |
+| Hosting | Netlify (static-friendly; no server secrets needed) |
 
 > Note: the design ships its own complete CSS design system (`colors_and_type.css`, `site.css`).
 > Rather than re-derive every token into Tailwind by hand, I'll **port these stylesheets into the
