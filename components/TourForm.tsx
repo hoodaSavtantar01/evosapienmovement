@@ -127,7 +127,7 @@ export default function TourForm() {
             <span className="meta eyebrow-dark">Tour Booked</span>
           </div>
           <h3 className="display-h3" style={{ margin: "0 0 16px", color: "#0a0a0a" }}>Your tour is confirmed.</h3>
-          <p className="body" style={{ color: "rgba(0,0,0,0.65)", marginBottom: 16 }}>A confirmation has been sent to your email. The receptionist will text you the morning of your visit with arrival details.</p>
+          <p className="body" style={{ color: "rgba(0,0,0,0.65)", marginBottom: 16 }}>We&apos;ve received your request. Our receptionist will text you to confirm your slot and share arrival details.</p>
           <p className="meta" style={{ color: "rgba(0,0,0,0.4)", fontSize: 11, lineHeight: 1.6 }}>If you decide to join after your tour, membership payment is collected at the gym — no online payment required.</p>
         </div>
       )}

@@ -109,7 +109,7 @@ export default function ApplyForm() {
             <span className="eyebrow">Application Received</span>
           </div>
           <h3 className="display-h3" style={{ margin: "0 0 16px" }}>You&apos;re in the queue.</h3>
-          <p className="body" style={{ marginBottom: 16 }}>A confirmation has been sent to your email. Our receptionist will call you within 24 hours to complete your membership.</p>
+          <p className="body" style={{ marginBottom: 16 }}>We&apos;ve received your application. Our receptionist will call you within 24 hours to complete your membership.</p>
           <p className="meta" style={{ color: "rgba(255,255,255,0.5)", fontSize: 11, lineHeight: 1.6 }}>Payment is collected at the gym — no online payment required. Bring cash or card on your first visit.</p>
         </div>
       )}
