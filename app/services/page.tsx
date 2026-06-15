@@ -65,6 +65,10 @@ export default function ServicesPage() {
           {/* Discipline II — Bouldering */}
           <article className="reveal" style={{ padding: "48px 0", borderBottom: "1px solid rgba(255,255,255,0.08)" }}>
             <div className="row-grid" style={{ display: "grid", gridTemplateColumns: "1fr", gap: 48 }}>
+              <div style={{ position: "relative", aspectRatio: "4 / 3", overflow: "hidden" }}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/assets/photos/bouldering-wall.jpg" alt="Climber on the bouldering wall" style={{ width: "100%", height: "100%", objectFit: "cover", filter: "grayscale(1) brightness(0.8)" }} />
+              </div>
               <div>
                 <span className="eyebrow">Discipline II — Rohtak&apos;s First</span>
                 <h2 className="display-h2" style={{ margin: "24px 0 24px" }}>Bouldering<br />Wall.</h2>
@@ -81,10 +85,6 @@ export default function ServicesPage() {
                 <div style={{ display: "flex", gap: 24, alignItems: "center", flexWrap: "wrap" }}>
                   <span className="meta">60 — 90 min sessions · All levels</span>
                 </div>
-              </div>
-              <div style={{ position: "relative", aspectRatio: "4 / 3", overflow: "hidden" }}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/assets/photos/bouldering-wall.jpg" alt="Climber on the bouldering wall" style={{ width: "100%", height: "100%", objectFit: "cover", filter: "grayscale(1) brightness(0.8)" }} />
               </div>
             </div>
           </article>
@@ -121,6 +121,10 @@ export default function ServicesPage() {
           {/* Discipline V — Dance */}
           <article className="reveal" style={{ padding: "48px 0" }}>
             <div className="row-grid" style={{ display: "grid", gridTemplateColumns: "1fr", gap: 48 }}>
+              <div style={{ position: "relative", aspectRatio: "4 / 3", overflow: "hidden" }}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/assets/photos/dance.jpg" alt="Dancers in a salsa class" style={{ width: "100%", height: "100%", objectFit: "cover", filter: "grayscale(1) brightness(0.85)" }} />
+              </div>
               <div>
                 <span className="eyebrow">Discipline V — Daily, Evenings</span>
                 <h2 className="display-h2" style={{ margin: "24px 0 24px" }}>Dance.</h2>
@@ -137,10 +141,6 @@ export default function ServicesPage() {
                   <span className="meta">Daily · 6:30 — 8:30 PM</span>
                 </div>
               </div>
-              <div style={{ position: "relative", aspectRatio: "4 / 3", overflow: "hidden" }}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/assets/photos/dance.jpg" alt="Dancers in a salsa class" style={{ width: "100%", height: "100%", objectFit: "cover", filter: "grayscale(1) brightness(0.85)" }} />
-              </div>
             </div>
           </article>
 
@@ -156,12 +156,12 @@ export default function ServicesPage() {
                 <h2 className="display-h2" style={{ margin: "24px 0 24px" }}>Cardio.</h2>
                 <p className="body-lg" style={{ marginBottom: 32 }}>
                   Build the engine that powers every other discipline. Self-powered curved
-                  treadmills, rowers, and Technogym conditioning machines for endurance, fat loss,
-                  and heart-rate training. Sprint, pace, or recover — every session is programmed
-                  to your zones.
+                  treadmills, cross trainers, and Technogym conditioning machines for endurance,
+                  fat loss, and heart-rate training. Sprint, pace, or recover — every session is
+                  programmed to your zones.
                 </p>
                 <ul style={{ listStyle: "none", padding: 0, margin: "0 0 32px", display: "flex", flexDirection: "column", gap: 14 }}>
-                  <li className="meta" style={{ display: "flex", alignItems: "center", gap: 14 }}><span style={bullet} />Self-powered curved treadmills &amp; rowers</li>
+                  <li className="meta" style={{ display: "flex", alignItems: "center", gap: 14 }}><span style={bullet} />Self-powered curved treadmills &amp; cross trainers</li>
                   <li className="meta" style={{ display: "flex", alignItems: "center", gap: 14 }}><span style={bullet} />Heart-rate zone training, coached to your targets</li>
                   <li className="meta" style={{ display: "flex", alignItems: "center", gap: 14 }}><span style={bullet} />Built for endurance, conditioning &amp; fat loss</li>
                 </ul>
